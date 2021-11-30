@@ -27,6 +27,10 @@ LOCAL_SHARED_LIBRARIES        := libsdmcore libqservice libbinder libhardware li
                                  android.hardware.graphics.composer@2.2 \
 
 
+ifeq ($(TARGET_USES_FOD_ZPOS), true)
+LOCAL_CFLAGS                  += -DFOD_ZPOS
+endif
+
 LOCAL_SRC_FILES               := hwc_session.cpp \
                                  hwc_session_services.cpp \
                                  hwc_display.cpp \
